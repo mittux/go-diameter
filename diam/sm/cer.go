@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/fiorix/go-diameter/diam"
-	"github.com/fiorix/go-diameter/diam/avp"
-	"github.com/fiorix/go-diameter/diam/datatype"
-	"github.com/fiorix/go-diameter/diam/sm/smparser"
-	"github.com/fiorix/go-diameter/diam/sm/smpeer"
+	"github.com/mittux/go-diameter/diam"
+	"github.com/mittux/go-diameter/diam/avp"
+	"github.com/mittux/go-diameter/diam/datatype"
+	"github.com/mittux/go-diameter/diam/sm/smparser"
+	"github.com/mittux/go-diameter/diam/sm/smpeer"
 )
 
 // handleCER handles Capabilities-Exchange-Request messages.

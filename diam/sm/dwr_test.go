@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/fiorix/go-diameter/diam"
-	"github.com/fiorix/go-diameter/diam/avp"
-	"github.com/fiorix/go-diameter/diam/datatype"
-	"github.com/fiorix/go-diameter/diam/diamtest"
-	"github.com/fiorix/go-diameter/diam/dict"
-	"github.com/fiorix/go-diameter/diam/sm/smparser"
+	"github.com/mittux/go-diameter/diam"
+	"github.com/mittux/go-diameter/diam/avp"
+	"github.com/mittux/go-diameter/diam/datatype"
+	"github.com/mittux/go-diameter/diam/diamtest"
+	"github.com/mittux/go-diameter/diam/dict"
+	"github.com/mittux/go-diameter/diam/sm/smparser"
 )
 
 // These tests use dictionary, settings and functions from sm_test.go.

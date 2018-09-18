@@ -7,9 +7,9 @@ package smparser
 import (
 	"testing"
 
-	"github.com/fiorix/go-diameter/diam"
-	"github.com/fiorix/go-diameter/diam/avp"
-	"github.com/fiorix/go-diameter/diam/datatype"
+	"github.com/mittux/go-diameter/diam"
+	"github.com/mittux/go-diameter/diam/avp"
+	"github.com/mittux/go-diameter/diam/datatype"
 )
 
 func TestDWA(t *testing.T) {

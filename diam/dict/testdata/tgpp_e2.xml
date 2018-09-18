@@ -294,84 +294,93 @@
         </avp>
 
         <avp name="Logical-Access-Id" code="302" vendor-id="10415" must="V" may="M" may-encrypt="Y">
-        	<data type="OctetString"/>
+            <data type="OctetString"/>
         </avp>
 
         <avp name="Access-Network-Type" code="306" vendor-id="10415" must="V" may="M" may-encrypt="Y">
-        	<data type="Grouped">
-        		<rule avp="NAS-Port-Type" required="true" max="1" />
-        		<rule avp="Aggregation-Network-Type" required="false" max="1" />
+            <data type="Grouped">
+                <rule avp="NAS-Port-Type" required="true" max="1" />
+                <rule avp="Aggregation-Network-Type" required="false" max="1" />
             </data>
         </avp>
 
-		<avp name="Initial-Gate-Setting" code="303" vendor-id="10415" must="V" may="M" may-encrypt="Y">
-        	<data type="Grouped">
-        		<rule avp="NAS-Filter-Rule" required="false" max="1" />
-        		<rule avp="Max-Requested-Bandwidth-UL" required="false" max="1" />
-        		<rule avp="Max-Requested-Bandwidth-DL" required="false" max="1" />
+        <avp name="Initial-Gate-Setting" code="303" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="Grouped">
+                <rule avp="NAS-Filter-Rule" required="false" max="1" />
+                <rule avp="Max-Requested-Bandwidth-UL" required="false" max="1" />
+                <rule avp="Max-Requested-Bandwidth-DL" required="false" max="1" />
             </data>
         </avp>
 
         <avp name="QoS-Profile" code="304" vendor-id="10415" must="V" may="M" may-encrypt="Y">
-        	<data type="Grouped">
-        		<rule avp="Application-Class-ID" required="false" max="1" />
-        		<rule avp="Media-Type" required="false" max="1" />
-        		<rule avp="Reservation-Priority" required="false" max="1" />
-        		<rule avp="Max-Requested-Bandwidth-UL" required="false" max="1" />
-        		<rule avp="Max-Requested-Bandwidth-DL" required="false" max="1" />
-        		<rule avp="Transport-Class" required="false" max="1" />
+            <data type="Grouped">
+                <rule avp="Application-Class-ID" required="false" max="1" />
+                <rule avp="Media-Type" required="false" max="1" />
+                <rule avp="Reservation-Priority" required="false" max="1" />
+                <rule avp="Max-Requested-Bandwidth-UL" required="false" max="1" />
+                <rule avp="Max-Requested-Bandwidth-DL" required="false" max="1" />
+                <rule avp="Transport-Class" required="false" max="1" />
             </data>
         </avp>
 
         <avp name="IP-Connectivity-Status" code="305" vendor-id="10415" must="V" may="M" may-encrypt="Y">
             <data type="Enumerated">
-            	<item code="0" name="IP-CONNECTIVITY-ON"/>
-            	<item code="1" name="IP-CONNECTIVITY-LOST"/>
+                <item code="0" name="IP-CONNECTIVITY-ON"/>
+                <item code="1" name="IP-CONNECTIVITY-LOST"/>
             </data>
         </avp>
 
         <avp name="Aggregation-Network-Type" code="307" vendor-id="10415" must="V" may="M" may-encrypt="Y">
             <data type="Enumerated">
-            	<item code="0" name="UNKNOWN"/>
-            	<item code="1" name="ATM"/>
-            	<item code="2" name="ETHERNET"/>
+                <item code="0" name="UNKNOWN"/>
+                <item code="1" name="ATM"/>
+                <item code="2" name="ETHERNET"/>
             </data>
         </avp>
 
         <avp name="Expiry-Time" code="709" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
-        	<data type="Time">
-        	</data>
+            <data type="Time">
+            </data>
         </avp>
 
         <avp name="Subs-Req-Type" code="705" vendor-id="10415" must="M,V" may-encrypt="Y">
-        	<data type="Enumerated">
+            <data type="Enumerated">
             <!-- TBD -->
-        	</data>
+            </data>
         </avp>
         
         <avp name="TGPP-User-Location-Info" code="22" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
-        	<data type="OctetString"/>
+            <data type="OctetString"/>
         </avp>
 
         <avp name="Frame-IP-Address" code="8" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
-        	<data type="OctetString"/>
+            <data type="OctetString"/>
         </avp>
 
         <avp name="Frame-IPv6-Prefix" code="97" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
-        	<data type="OctetString"/>
+            <data type="OctetString"/>
         </avp>
         
         <avp name="NAS-Port-Type" code="61" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
-        	<data type="Enumerated">
+            <data type="Enumerated">
             <!-- TBD -->
-        	</data>
+            </data>
         </avp>
 
         <avp name="NAS-Filter-Rule" code="400" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
-        	<data type="IPFilterRule">
+            <data type="IPFilterRule">
             <!-- TBD -->
-        	</data>
+            </data>
         </avp>
+
+        <avp name="Max-Requested-Bandwidth-DL" code="515" must="V,M"    may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+            <data type="Unsigned32"/>
+        </avp>
+
+        <avp name="Max-Requested-Bandwidth-UL" code="516" must="V,M"    may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+            <data type="Unsigned32"/>
+        </avp>
+
 
     </application>
 </diameter>

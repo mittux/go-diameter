@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/fiorix/go-diameter/diam"
-	"github.com/fiorix/go-diameter/diam/dict"
+	"github.com/mittux/go-diameter/diam"
+	"github.com/mittux/go-diameter/diam/dict"
 )
 
 // A Server is a Diameter server listening on a system-chosen port on the

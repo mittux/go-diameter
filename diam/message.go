@@ -13,9 +13,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fiorix/go-diameter/diam/avp"
-	"github.com/fiorix/go-diameter/diam/datatype"
-	"github.com/fiorix/go-diameter/diam/dict"
+	"github.com/mittux/go-diameter/diam/avp"
+	"github.com/mittux/go-diameter/diam/datatype"
+	"github.com/mittux/go-diameter/diam/dict"
 )
 
 // MessageBufferLength is the default buffer length for Diameter messages.
