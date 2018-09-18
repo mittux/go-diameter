@@ -23,6 +23,7 @@ func init() {
 		{"Network Access Server", networkaccessserverXML},
 		{"TGPP", tgpprorfXML},
 		{"TGPP_S6a", tgpps6aXML},
+		{"TGPP_CLF", tgppclfafXML},
 	}
 	var err error
 	Default, err = NewParser()
@@ -2179,6 +2180,384 @@ var networkaccessserverXML = `<?xml version="1.0" encoding="UTF-8"?>
 		</avp>
 		
 	</application>
+</diameter>`
+
+var tgppclfafXML = `<?xml version="1.0" encoding="UTF-8"?>
+<diameter>
+        <!--
+        3GPP TS 283 035
+        See: https://www.etsi.org/deliver/etsi_es/283000_283099/283035/03.02.01_60/es_283035v030201p.pdf
+    -->
+    <application id="16777231" type="auth" name="TGPP e2">
+         <vendor id="10415" name="TGPP"/>
+         <command code="306" short="UD" name="User-Data">
+            <!--
+                < User-Data -Request > ::= < Diameter Header: 306, REQ, PXY, 16777231 >
+                < Session-Id >
+                { Vendor-Specific-Application-Id }
+                { Auth-Session-State }
+                { Origin-Host }
+                { Origin-Realm }
+                [ Destination-Host ]
+                { Destination-Realm }
+                [Globally-Unique-Address]
+                [User-Name]
+                [Global-Access-Id]
+                [AF-Application-Identifier]
+                [Requested-Information]
+                *[ AVP ]
+                *[ Proxy-Info ]
+                *[ Route-Record ]
+            -->
+            <request>
+                <rule avp="Session-Id" required="true" max="1" />
+                <rule avp="Vendor-Specific-Application-Id" required="true" max="1" />
+                <rule avp="Auth-Session-State" required="true" max="1" />
+                <rule avp="Origin-Host" required="true" max="1" />
+                <rule avp="Origin-Realm" required="true" max="1" />
+                <rule avp="Destination-Host" required="false" max="1" />
+                <rule avp="Destination-Realm" required="true" max="1" />
+                <rule avp="Globally-Unique-Address" required="false" max="1" />
+                <rule avp="User-Name" required="false" max="1" />
+                <rule avp="Global-Access-Id" required="false" max="1" />
+                <rule avp="AF-Application-Identifier" required="false" max="1" />
+                <rule avp="Requested-Information" required="false" max="1" />
+                <rule avp="Proxy-Info" required="false" />
+                <rule avp="Route-Record" required="false" />                
+            </request>
+
+            <!--
+                < User-Data-Answer > ::= < Diameter Header: 306, PXY, 16777231 >
+                < Session-Id >
+                { Vendor-Specific-Application-Id }
+                [ Result-Code ]
+                [ Experimental-Result ]
+                { Auth-Session-State }
+                { Origin-Host }
+                { Origin-Realm }
+                [User-Name]
+                [Logical-Access-Id]
+                [Physical-Access-Id]
+                [Access-Network-Type]
+                [Location-Information]
+                [Policy-Control-Contact-Point]
+                [Terminal-Type]
+                *[ AVP ]
+                *[ Failed-AVP ]
+                *[ Proxy-Info ]
+                *[ Route-Record ]
+            -->
+            <answer>
+                <rule avp="Session-Id" required="true" max="1" />
+                <rule avp="Vendor-Specific-Application-Id" required="true" max="1" />
+                <rule avp="Result-Code" required="false" max="1" />
+                <rule avp="Experimental-Result" required="false" max="1" />
+                <rule avp="Auth-Session-State" required="true" max="1" />
+                <rule avp="Origin-Host" required="true" max="1" />
+                <rule avp="Origin-Realm" required="true" max="1" />
+                <rule avp="User-Name" required="false" max="1" />
+                <rule avp="Logical-Access-Id" required="false" max="1" />
+                <rule avp="Physical-Access-Id" required="false" max="1" />
+                <rule avp="AF-Application-Identifier" required="false" max="1" />
+                <rule avp="Location-Information" required="false" max="1" />
+                <rule avp="Policy-Control-Contact-Point" required="false" max="1" />
+                <rule avp="Terminal-Type" required="false" max="1" />
+                <rule avp="Failed-AVP" required="false" max="1" />
+                <rule avp="Proxy-Info" required="false" />
+                <rule avp="Route-Record" required="false" />                                
+            </answer>
+         </command>
+
+         <command code="308" short="SN" name="Subscribe-Notifications">
+
+            <!--
+                < Subscribe-Notifications-Request > ::= < Diameter Header: 308, REQ, PXY, 16777231 >
+                < Session-Id >
+                { Vendor-Specific-Application-Id }
+                { Auth-Session-State }
+                { Origin-Host }
+                { Origin-Realm }
+                [ Destination-Host ]
+                { Destination-Realm }
+                { Subs-Req-Type }
+                [ Expiry-Time ]
+                [Globally-Unique-Address]
+                [User-Name]
+                [AF-Application-Identifier]
+                *[Event-Type]
+                *[ AVP ]
+                *[ Proxy-Info ]
+                *[ Route-Record ]           
+            -->
+            <request>
+            <!-- TBD -->
+            </request>
+
+            <!--
+                < Subscribe-Notifications-Answer > ::= < Diameter Header: 308, PXY, 16777231 >
+                < Session-Id >
+                { Vendor-Specific-Application-Id }
+                { Auth-Session-State }
+                [ Result-Code ]
+                [ Experimental-Result ]
+                { Origin-Host }
+                { Origin-Realm }
+                [ Expiry-Time ]
+                *[ AVP ]
+                *[ Failed-AVP ]
+                *[ Proxy-Info ]
+                *[ Route-Record ]           
+            -->
+            <answer>
+            <!-- TBD -->
+            </answer>
+         </command>
+
+         <command code="309" short="PN" name="Push-Notification">
+
+            <!--
+                < Push-Notification-Request > ::= < Diameter Header: 309, REQ, PXY, 16777231 >
+                < Session-Id >
+                { Vendor-Specific-Application-Id }
+                { Auth-Session-State }
+                { Origin-Host }
+                { Origin-Realm }
+                { Destination-Host }
+                { Destination-Realm }
+                *[Event-Type]
+                [Globally-Unique-Address]
+                [User-Name]
+                [Access-Network-Type]
+                [Location-Information]
+                [Policy-Control-Contact-Point]
+                [Terminal-Type]
+                [Logical-Access-Id]
+                [Physical-Access-Id]
+                [Access-Network-Type]
+                [Initial-Gate-Setting]
+                *[QoS-Profile]
+                [IP-Connectivity-Status]
+                *[ AVP ]
+                *[ Proxy-Info ]
+                *[ Route-Record ]           
+            -->
+            <request>
+            <!-- TBD -->
+            </request>
+
+            <!--
+                < Push-Notification-Answer > ::= < Diameter Header: 309, PXY, 16777231 >
+                < Session-Id >
+                { Vendor-Specific-Application-Id }
+                [ Result-Code ]
+                [ Experimental-Result ]
+                { Auth-Session-State }
+                { Origin-Host }
+                { Origin-Realm }
+                *[ AVP ]
+                *[ Failed-AVP ]
+                *[ Proxy-Info ]
+                *[ Route-Record ]           
+            -->
+            <answer>
+            <!-- TBD -->
+            </answer>
+         </command>
+
+        <avp name="Location-Information" code="350" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="Grouped">
+                <rule avp="Line-Identifier" required="false" max="1" />
+                <rule avp="Civic-Location" required="false" max="1" />
+                <rule avp="Geospatial-Location" required="false" max="1" />
+                <rule avp="Operator-Specific-GI" required="false" max="1" />
+                <rule avp="PIDF-Location-Object" required="false" max="1" />
+                <rule avp="AVP" required="false" />
+            </data>
+        </avp>
+
+        <avp name="Policy-Control-Contact-Point" code="351" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="DiameterIdentity"/>
+        </avp>
+
+        <avp name="Terminal-Type" code="352" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+        
+        <avp name="Requested-Information" code="353" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="Enumerated">
+                <item code="0" name="NASS-USER-ID"/>
+                <item code="1" name="LOCATION-INFORMATION"/>
+                <item code="2" name="POLICY-CONTROL-CONTACT-POINT"/>
+                <item code="3" name="ACCESS-NETWORK-TYPE"/>
+                <item code="4" name="TERMINAL-TYPE"/>
+                <item code="5" name="LOGICAL-ACCESS-ID"/>
+                <item code="6" name="PHYSICAL-ACCESS-ID"/>
+                <item code="7" name="IP-ADDRESS"/>
+                <item code="8" name="INITIAL-GATE-SETTING"/>
+                <item code="9" name="QOS-PROFILE"/>
+                <item code="10" name="IP-CONNECTIVITY-STATUS"/>
+                <item code="11" name="EMERGENCY-CALL-ROUTING-INFO"/>
+            </data>
+        </avp>
+
+        <avp name="Event-Type" code="354" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="Enumerated">
+                <item code="0" name="USER-LOGON"/>
+                <item code="1" name="LOCATION-INFORMATION-CHANGED"/>
+                <item code="2" name="POLICY-CONTROL-CONTACT-POINT-CHANGED"/>
+                <item code="3" name="ACCESS-NETWORK-TYPE-CHANGED"/>
+                <item code="4" name="TERMINAL-TYPE-CHANGED"/>
+                <item code="5" name="LOGICAL-ACCESS-ID-CHANGED"/>
+                <item code="6" name="PHYSICAL-ACCESS-ID-CHANGED"/>
+                <item code="7" name="IP-ADDRESS-CHANGED"/>
+                <item code="8" name="INITIAL-GATE-SETTING-CHANGED"/>
+                <item code="9" name="QOS-PROFILE-CHANGED"/>
+                <item code="10" name="USER-LOGOFF"/>
+            </data>
+        </avp>
+
+        <avp name="Line-Identifier" code="500" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+
+        <avp name="Civic-Location" code="355" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+
+        <avp name="Geospatial-Location" code="356" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+
+        <avp name="Global-Access-Id" code="357" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="Grouped">
+                <rule avp="Fixed-Access-ID" required="false" max="1" />
+                <rule avp="3GPP-User-Location-Info" required="false" max="1" />
+                <rule avp="AVP" required="false" />
+            </data>
+        </avp>
+
+        <avp name="Fixed-Access-Id" code="358" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="Grouped">
+                <rule avp="Relay-Agent" required="true" max="1" />
+                <rule avp="Logical-Access-ID" required="false" max="1" />
+                <rule avp="Physical-Access-ID" required="false" max="1" />
+                <rule avp="AVP" required="false" />
+            </data>
+        </avp>
+
+        <avp name="Relay-Agent" code="359" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+
+        <avp name="Operator-Specific-GI" code="360" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+
+        <avp name="Emergency-Call-Routing-Info" code="361" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="UTF8String"/>
+        </avp>
+
+        <avp name="Port-Number" code="362" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="Unsigned32"/>
+        </avp>
+
+        <avp name="PIDF-Location-Object" code="363" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+            <data type="UTF8String"/>
+        </avp>
+
+        <avp name="AF-Application-Identifier" code="504" vendor-id="10415" must="M,V" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+
+        <avp name="Globally-Unique-Address" code="300" vendor-id="10415" must="M,V" may-encrypt="Y">
+            <data type="Grouped">
+                <rule avp="Frame-IP-Address" required="false" max="1" />
+                <rule avp="Frame-IPv6-Prefix" required="false" max="1" />
+                <rule avp="Address-Realm" required="false" max="1" />
+            </data>
+        </avp>
+
+        <avp name="Logical-Access-Id" code="302" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        	<data type="OctetString"/>
+        </avp>
+
+        <avp name="Access-Network-Type" code="306" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        	<data type="Grouped">
+        		<rule avp="NAS-Port-Type" required="true" max="1" />
+        		<rule avp="Aggregation-Network-Type" required="false" max="1" />
+            </data>
+        </avp>
+
+		<avp name="Initial-Gate-Setting" code="303" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        	<data type="Grouped">
+        		<rule avp="NAS-Filter-Rule" required="false" max="1" />
+        		<rule avp="Max-Requested-Bandwidth-UL" required="false" max="1" />
+        		<rule avp="Max-Requested-Bandwidth-DL" required="false" max="1" />
+            </data>
+        </avp>
+
+        <avp name="QoS-Profile" code="304" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        	<data type="Grouped">
+        		<rule avp="Application-Class-ID" required="false" max="1" />
+        		<rule avp="Media-Type" required="false" max="1" />
+        		<rule avp="Reservation-Priority" required="false" max="1" />
+        		<rule avp="Max-Requested-Bandwidth-UL" required="false" max="1" />
+        		<rule avp="Max-Requested-Bandwidth-DL" required="false" max="1" />
+        		<rule avp="Transport-Class" required="false" max="1" />
+            </data>
+        </avp>
+
+        <avp name="IP-Connectivity-Status" code="305" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="Enumerated">
+            	<item code="0" name="IP-CONNECTIVITY-ON"/>
+            	<item code="1" name="IP-CONNECTIVITY-LOST"/>
+            </data>
+        </avp>
+
+        <avp name="Aggregation-Network-Type" code="307" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+            <data type="Enumerated">
+            	<item code="0" name="UNKNOWN"/>
+            	<item code="1" name="ATM"/>
+            	<item code="2" name="ETHERNET"/>
+            </data>
+        </avp>
+
+        <avp name="Expiry-Time" code="709" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        	<data type="Time">
+        	</data>
+        </avp>
+
+        <avp name="Subs-Req-Type" code="705" vendor-id="10415" must="M,V" may-encrypt="Y">
+        	<data type="Enumerated">
+            <!-- TBD -->
+        	</data>
+        </avp>
+        
+        <avp name="TGPP-User-Location-Info" code="22" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        	<data type="OctetString"/>
+        </avp>
+
+        <avp name="Frame-IP-Address" code="8" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
+        	<data type="OctetString"/>
+        </avp>
+
+        <avp name="Frame-IPv6-Prefix" code="97" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
+        	<data type="OctetString"/>
+        </avp>
+        
+        <avp name="NAS-Port-Type" code="61" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
+        	<data type="Enumerated">
+            <!-- TBD -->
+        	</data>
+        </avp>
+
+        <avp name="NAS-Filter-Rule" code="400" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
+        	<data type="IPFilterRule">
+            <!-- TBD -->
+        	</data>
+        </avp>
+
+    </application>
 </diameter>`
 
 var tgpprorfXML = `<?xml version="1.0" encoding="UTF-8"?>

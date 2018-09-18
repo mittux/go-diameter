@@ -140,6 +140,7 @@ func init() {
 		{"Network Access Server", networkaccessserverXML},
 		{"TGPP", tgpprorfXML},
 		{"TGPP_S6a", tgpps6aXML},
+		{"TGPP_CLF", tgppclfafXML},
 	}
 	var err error
 	Default, err = NewParser()

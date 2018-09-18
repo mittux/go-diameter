@@ -9,6 +9,7 @@ package avp
 // Diameter AVP types.
 const (
 	ADCRuleBaseName                            = 1095
+	AFApplicationIdentifier                    = 504
 	AFChargingIdentifier                       = 505
 	AFCorrelationInformation                   = 1276
 	AMBR                                       = 1435
@@ -24,6 +25,7 @@ const (
 	AUTN                                       = 1449
 	AccessNetworkChargingIdentifierValue       = 503
 	AccessNetworkInformation                   = 1263
+	AccessNetworkType                          = 306
 	AccessRestrictionData                      = 1426
 	AccessTransferInformation                  = 2709
 	AccessTransferType                         = 2710
@@ -56,6 +58,7 @@ const (
 	AddressDomain                              = 898
 	AddressType                                = 899
 	AddresseeType                              = 1208
+	AggregationNetworkType                     = 307
 	AllAPNConfigurationsIncludedIndicator      = 1428
 	AllocationRetentionPriority                = 1034
 	AlternateChargedPartyAddress               = 1280
@@ -137,6 +140,7 @@ const (
 	ChargingRuleInstall                        = 1001
 	ChargingRuleName                           = 1005
 	CheckBalanceResult                         = 422
+	CivicLocation                              = 355
 	Class                                      = 25
 	ClassIdentifier                            = 1214
 	ClientAddress                              = 2018
@@ -177,6 +181,7 @@ const (
 	EPSSubscribedQoSProfile                    = 1431
 	EUTRANVector                               = 1414
 	EarlyMediaDescription                      = 1272
+	EmergencyCallRoutingInfo                   = 361
 	Envelope                                   = 1266
 	EnvelopeEndTime                            = 1267
 	EnvelopeReporting                          = 1268
@@ -188,11 +193,13 @@ const (
 	EventChargingTimeStamp                     = 1258
 	EventTimestamp                             = 55
 	EventTrigger                               = 1006
+	EventType                                  = 354
 	EventType                                  = 823
 	ExperimentalResult                         = 297
 	ExperimentalResultCode                     = 298
 	ExpirationDate                             = 1439
 	Expires                                    = 888
+	ExpiryTime                                 = 709
 	Exponent                                   = 429
 	ExtPDPAddress                              = 1621
 	ExtPDPType                                 = 1620
@@ -205,10 +212,13 @@ const (
 	FinalUnitAction                            = 449
 	FinalUnitIndication                        = 430
 	FirmwareRevision                           = 267
+	FixedAccessID                              = 358
 	FixedUserLocationInfo                      = 2825
 	FlowDescription                            = 507
 	Flows                                      = 510
 	ForwardingPending                          = 3415
+	FrameIPAddress                             = 8
+	FrameIPv6Prefix                            = 97
 	FramedAppletalkLink                        = 37
 	FramedAppletalkNetwork                     = 38
 	FramedAppletalkZone                        = 39
@@ -234,6 +244,9 @@ const (
 	GPRSSubscriptionData                       = 1467
 	GSUPoolIdentifier                          = 453
 	GSUPoolReference                           = 457
+	GeospatialLocation                         = 356
+	GlobalAccessID                             = 357
+	GloballyUniqueAddress                      = 300
 	GrantedServiceUnit                         = 431
 	GuaranteedBitrateUL                        = 1026
 	HPLMNODB                                   = 1418
@@ -249,6 +262,7 @@ const (
 	IMSInformation                             = 876
 	IMSVisitedNetworkIdentifier                = 2713
 	IPCANType                                  = 1027
+	IPConnectivityStatus                       = 305
 	IPRealmDefaultIndication                   = 2603
 	ISUPCause                                  = 3416
 	ISUPCauseDiagnostics                       = 3422
@@ -260,6 +274,7 @@ const (
 	InbandSecurityID                           = 299
 	IncomingTrunkGroupID                       = 852
 	IncrementalCost                            = 2062
+	InitialGateSetting                         = 303
 	InitialIMSChargingIdentifier               = 2321
 	InstanceID                                 = 3402
 	IntegrityKey                               = 626
@@ -286,11 +301,14 @@ const (
 	LCSRequestorID                             = 1239
 	LCSRequestorIDString                       = 1240
 	LIPAPermission                             = 1618
+	LineIdentifier                             = 500
 	LocalGWInsertedIndication                  = 2604
 	LocalSequenceNumber                        = 2063
 	LocationEstimate                           = 1242
 	LocationEstimateType                       = 1243
+	LocationInformation                        = 350
 	LocationType                               = 1244
+	LogicalAccessID                            = 302
 	LoginIPHost                                = 14
 	LoginIPv6Host                              = 98
 	LoginLATGroup                              = 36
@@ -376,6 +394,7 @@ const (
 	OfflineCharging                            = 1278
 	OnlineChargingFlag                         = 2303
 	OperatorDeterminedBarring                  = 1425
+	OperatorSpecificGI                         = 360
 	OptionalCapability                         = 605
 	OriginHost                                 = 264
 	OriginRealm                                = 296
@@ -397,6 +416,7 @@ const (
 	PDPContext                                 = 1469
 	PDPContextType                             = 1247
 	PDPType                                    = 1470
+	PIDFLocationObject                         = 363
 	PLMNClient                                 = 1482
 	PSAppendFreeFormatData                     = 867
 	PSFreeFormatData                           = 866
@@ -422,7 +442,9 @@ const (
 	PoCUserRole                                = 1252
 	PoCUserRoleIDs                             = 1253
 	PoCUserRoleinfoUnits                       = 1254
+	PolicyControlContactPoint                  = 351
 	PortLimit                                  = 62
+	PortNumber                                 = 362
 	PositioningData                            = 1245
 	Precedence                                 = 1010
 	PreemptionCapability                       = 1047
@@ -442,6 +464,7 @@ const (
 	QoSClassIdentifier                         = 1028
 	QoSFilterRule                              = 407
 	QoSInformation                             = 1016
+	QoSProfile                                 = 304
 	QoSSubscribed                              = 1404
 	QuotaConsumptionTime                       = 881
 	QuotaHoldingTime                           = 871
@@ -475,6 +498,7 @@ const (
 	RelatedIMSChargingIdentifier               = 2711
 	RelatedIMSChargingIdentifierNode           = 2712
 	RelationshipMode                           = 2706
+	RelayAgent                                 = 359
 	RelayNodeIndicator                         = 1633
 	RemainingBalance                           = 2021
 	ReplyApplicID                              = 1223
@@ -483,6 +507,7 @@ const (
 	ReportingReason                            = 872
 	RequestedAction                            = 436
 	RequestedEUTRANAuthenticationInfo          = 1408
+	RequestedInformation                       = 353
 	RequestedPartyAddress                      = 1251
 	RequestedServiceUnit                       = 437
 	RequestedUTRANGERANAuthenticationInfo      = 1409
@@ -567,6 +592,7 @@ const (
 	StatusASCode                               = 2702
 	StopTime                                   = 2042
 	SubmissionTime                             = 1202
+	SubsReqType                                = 705
 	SubscribedPeriodicRAUTAUTimer              = 1619
 	SubscribedVSRVCC                           = 1636
 	SubscriberRole                             = 2033
@@ -607,6 +633,7 @@ const (
 	Teleservice                                = 3413
 	TeleserviceList                            = 1486
 	TerminalInformation                        = 1401
+	TerminalType                               = 352
 	TerminatingIOI                             = 840
 	TerminationCause                           = 295
 	TimeFirstUsage                             = 2043
