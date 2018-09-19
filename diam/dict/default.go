@@ -2545,18 +2545,6 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
             <data type="OctetString"/>
         </avp>
         
-        <avp name="NAS-Port-Type" code="61" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
-            <data type="Enumerated">
-            <!-- TBD -->
-            </data>
-        </avp>
-
-        <avp name="NAS-Filter-Rule" code="400" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
-            <data type="IPFilterRule">
-            <!-- TBD -->
-            </data>
-        </avp>
-
         <avp name="Max-Requested-Bandwidth-DL" code="515" must="V,M"    may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
             <data type="Unsigned32"/>
         </avp>
