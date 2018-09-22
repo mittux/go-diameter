@@ -37,12 +37,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/fiorix/go-diameter/diam"
-	"github.com/fiorix/go-diameter/diam/avp"
-	"github.com/fiorix/go-diameter/diam/datatype"
-	"github.com/fiorix/go-diameter/diam/dict"
-	"github.com/fiorix/go-diameter/diam/sm"
-	"github.com/fiorix/go-diameter/diam/sm/smpeer"
+	"github.com/mittux/go-diameter/diam"
+	"github.com/mittux/go-diameter/diam/avp"
+	"github.com/mittux/go-diameter/diam/datatype"
+	"github.com/mittux/go-diameter/diam/dict"
+	"github.com/mittux/go-diameter/diam/sm"
+	"github.com/mittux/go-diameter/diam/sm/smpeer"
 )
 
 func init() {
