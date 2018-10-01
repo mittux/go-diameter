@@ -2258,10 +2258,11 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
                 <rule avp="User-Name" required="false" max="1" />
                 <rule avp="Logical-Access-Id" required="false" max="1" />
                 <rule avp="Physical-Access-Id" required="false" max="1" />
-                <rule avp="AF-Application-Identifier" required="false" max="1" />
+                <rule avp="Access-Network-Type" required="false" max="1" />
                 <rule avp="Location-Information" required="false" max="1" />
                 <rule avp="Policy-Control-Contact-Point" required="false" max="1" />
                 <rule avp="Terminal-Type" required="false" max="1" />
+                <rule avp="AVP" required="false"/>
                 <rule avp="Failed-AVP" required="false" max="1" />
                 <rule avp="Proxy-Info" required="false" />
                 <rule avp="Route-Record" required="false" />                                
@@ -2290,7 +2291,22 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
                 *[ Route-Record ]           
             -->
             <request>
-            <!-- TBD -->
+                <rule avp="Session-Id" required="true" max="1" />
+                <rule avp="Vendor-Specific-Application-Id" required="true" max="1" />
+                <rule avp="Auth-Session-State" required="true" max="1" />
+                <rule avp="Origin-Host" required="true" max="1" />
+                <rule avp="Origin-Realm" required="true" max="1" />
+                <rule avp="Destination-Host" required="false" max="1" />
+                <rule avp="Destination-Realm" required="true" max="1" />
+                <rule avp="Subs-Req-Type" required="true" max="1" />
+                <rule avp="Expiry-Time" required="false" max="1" />
+                <rule avp="Globally-Unique-Address" required="false" max="1" />
+                <rule avp="User-Name" required="false" max="1"/>
+                <rule avp="AF-Application-Identifier" required="false" max="1" />
+                <rule avp="Event-Type" required="false" max="1" />
+                <rule avp="AVP" required="false"/>
+                <rule avp="Proxy-Info" required="false"/>
+                <rule avp="Route-Record" required="false"/>
             </request>
 
             <!--
@@ -2309,7 +2325,18 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
                 *[ Route-Record ]           
             -->
             <answer>
-            <!-- TBD -->
+                <rule avp="Session-Id" required="true" max="1" />
+                <rule avp="Vendor-Specific-Application-Id" required="true" max="1" />
+                <rule avp="Auth-Session-State" required="true" max="1" />
+                <rule avp="Result-Code" required="false" max="1" />
+                <rule avp="Experimental-Result" required="false" max="1" />
+                <rule avp="Origin-Host" required="false" max="1" />
+                <rule avp="Origin-Realm" required="false" max="1" />
+                <rule avp="Expiry-Time" required="false" max="1" />
+                <rule avp="AVP" required="false"/>
+                <rule avp="Failed-AVP" required="false"/>
+                <rule avp="Proxy-Info" required="false"/>
+                <rule avp="Route-Record" required="false"/>
             </answer>
          </command>
 
@@ -2327,7 +2354,6 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
                 *[Event-Type]
                 [Globally-Unique-Address]
                 [User-Name]
-                [Access-Network-Type]
                 [Location-Information]
                 [Policy-Control-Contact-Point]
                 [Terminal-Type]
@@ -2342,7 +2368,28 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
                 *[ Route-Record ]           
             -->
             <request>
-            <!-- TBD -->
+                <rule avp="Session-Id" required="true" max="1" />
+                <rule avp="Vendor-Specific-Application-Id" required="true" max="1" />
+                <rule avp="Auth-Session-State" required="true" max="1" />
+                <rule avp="Origin-Host" required="true" max="1" />
+                <rule avp="Origin-Realm" required="true" max="1" />
+                <rule avp="Destination-Host" required="true" max="1" />
+                <rule avp="Destination-Realm" required="true" max="1" />
+                <rule avp="Event-Type" required="false" max="1" />
+                <rule avp="Globally-Unique-Address" required="false" max="1" />
+                <rule avp="User-Name" required="false" max="1" />
+                <rule avp="Location-Information" required="false" max="1" />
+                <rule avp="Policy-Control-Contact-Point" required="false" max="1" />
+                <rule avp="Terminal-Type" required="false" max="1" />
+                <rule avp="Logical-Access-ID" required="false" max="1" />
+                <rule avp="Physical-Access-ID" required="false" max="1" />
+                <rule avp="Access-Network-Type" required="false" max="1" />
+                <rule avp="Initial-Gate-Setting" required="false" max="1" />
+                <rule avp="QoS-Profile" required="false" max="1" />
+                <rule avp="IP-Connectivity-Status" required="false" max="1" />
+                <rule avp="AVP" required="false"/>
+                <rule avp="Proxy-Info" required="false"/>
+                <rule avp="Route-Record" required="false"/>
             </request>
 
             <!--
@@ -2360,7 +2407,17 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
                 *[ Route-Record ]           
             -->
             <answer>
-            <!-- TBD -->
+                <rule avp="Session-Id" required="true" max="1" />
+                <rule avp="Vendor-Specific-Application-Id" required="true" max="1" />
+                <rule avp="Auth-Session-State" required="true" max="1" />
+                <rule avp="Result-Code" required="false" max="1" />
+                <rule avp="Experimental-Result" required="false" max="1" />
+                <rule avp="Origin-Host" required="false" max="1" />
+                <rule avp="Origin-Realm" required="false" max="1" />
+                <rule avp="AVP" required="false"/>
+                <rule avp="Failed-AVP" required="false"/>
+                <rule avp="Proxy-Info" required="false"/>
+                <rule avp="Route-Record" required="false"/>
             </answer>
          </command>
 
@@ -2529,7 +2586,8 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
 
         <avp name="Subs-Req-Type" code="705" vendor-id="10415" must="M,V" may-encrypt="Y">
             <data type="Enumerated">
-            <!-- TBD -->
+                <item code="0" name="Subscribe"/>
+                <item code="1" name="Unsubscribe"/>
             </data>
         </avp>
         
