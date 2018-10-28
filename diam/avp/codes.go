@@ -10,6 +10,7 @@ package avp
 const (
 	AFApplicationIdentifier                    = 504
 	AMBR                                       = 1435
+	ANGWAddress                                = 1050
 	APNConfiguration                           = 1430
 	APNConfigurationProfile                    = 1429
 	APNOIReplacement                           = 1427
@@ -20,6 +21,8 @@ const (
 	ARAPSecurityData                           = 74
 	ARAPZoneAccess                             = 72
 	AUTN                                       = 1449
+	AccessNetworkChargingAddress               = 501
+	AccessNetworkChargingIdentifierGx          = 1022
 	AccessNetworkType                          = 306
 	AccessRestrictionData                      = 1426
 	AccountingAuthMethod                       = 406
@@ -50,6 +53,7 @@ const (
 	AuthSessionState                           = 277
 	AuthenticationInfo                         = 1413
 	AuthorizationLifetime                      = 291
+	BearerUsage                                = 1000
 	CCCorrelationID                            = 411
 	CCInputOctets                              = 412
 	CCMoney                                    = 413
@@ -94,6 +98,7 @@ const (
 	CreditControlFailureHandling               = 427
 	CurrencyCode                               = 425
 	DRMP                                       = 301
+	DefaultEPSBearerQoS                        = 1049
 	DestinationHost                            = 293
 	DestinationRealm                           = 283
 	DirectDebitingFailureHandling              = 428
@@ -116,14 +121,15 @@ const (
 	ExtPDPType                                 = 1620
 	ExternalClient                             = 1479
 	FailedAVP                                  = 279
-	FeatureList                                = 630
-	FeatureListID                              = 629
 	FilterID                                   = 11
 	FinalUnitAction                            = 449
 	FinalUnitIndication                        = 430
 	FirmwareRevision                           = 267
 	FixedAccessID                              = 358
 	FlowDescription                            = 507
+	FlowDirection                              = 1080
+	FlowInformation                            = 1058
+	FlowLabel                                  = 1057
 	FrameIPAddress                             = 8
 	FrameIPv6Prefix                            = 97
 	FramedAppletalkLink                        = 37
@@ -200,6 +206,7 @@ const (
 	NASPortType                                = 61
 	NORFlags                                   = 1443
 	NetworkAccessMode                          = 1417
+	NetworkRequestSupport                      = 1024
 	NotificationToUEUser                       = 1478
 	NumberOfRequestedVectors                   = 1410
 	OCFeatureVector                            = 622
@@ -210,6 +217,8 @@ const (
 	OCSupportedFeatures                        = 621
 	OCValidityDuration                         = 625
 	OMCID                                      = 1466
+	Offline                                    = 1008
+	Online                                     = 1009
 	OperatorDeterminedBarring                  = 1425
 	OperatorSpecificGI                         = 360
 	OriginHost                                 = 264
@@ -224,6 +233,8 @@ const (
 	PLMNClient                                 = 1482
 	PUAFlags                                   = 1442
 	PURFlags                                   = 1635
+	PacketFilterIdentifier                     = 1060
+	PacketFilterUsage                          = 1072
 	PasswordRetry                              = 75
 	PolicyControlContactPoint                  = 351
 	PortLimit                                  = 62
@@ -269,6 +280,7 @@ const (
 	SSCode                                     = 1476
 	SSStatus                                   = 1477
 	STNSR                                      = 1433
+	SecurityParameterIndex                     = 1056
 	ServedPartyIPAddress                       = 848
 	ServiceContextID                           = 461
 	ServiceIdentifier                          = 439
@@ -291,8 +303,10 @@ const (
 	SubscriptionID                             = 443
 	SubscriptionIDData                         = 444
 	SubscriptionIDType                         = 450
-	SupportedFeatures                          = 628
 	SupportedVendorID                          = 265
+	TGPPGGSNAddress                            = 7
+	TGPPMSTimeZone                             = 23
+	TGPPSGSNAddress                            = 6
 	TGPPServiceType                            = 1483
 	TGPPUserLocationInfo                       = 22
 	TSCode                                     = 1487
@@ -301,6 +315,7 @@ const (
 	TeleserviceList                            = 1486
 	TerminalType                               = 352
 	TerminationCause                           = 295
+	ToSTrafficClass                            = 1014
 	TraceCollectionEntity                      = 1452
 	TraceData                                  = 1458
 	TraceDepth                                 = 1462
