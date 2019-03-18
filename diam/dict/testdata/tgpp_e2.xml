@@ -237,7 +237,7 @@
             </answer>
          </command>
 
-        <avp name="Location-Information" code="350" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Location-Information" code="350" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="Grouped">
                 <rule avp="Line-Identifier" required="false" max="1" />
                 <rule avp="Civic-Location" required="false" max="1" />
@@ -248,15 +248,15 @@
             </data>
         </avp>
 
-        <avp name="Policy-Control-Contact-Point" code="351" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Policy-Control-Contact-Point" code="351" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="DiameterIdentity"/>
         </avp>
 
-        <avp name="Terminal-Type" code="352" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Terminal-Type" code="352" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
         
-        <avp name="Requested-Information" code="353" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="Requested-Information" code="353" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="Enumerated">
                 <item code="0" name="NASS-USER-ID"/>
                 <item code="1" name="LOCATION-INFORMATION"/>
@@ -273,7 +273,7 @@
             </data>
         </avp>
 
-        <avp name="Event-Type" code="354" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Event-Type" code="354" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="Enumerated">
                 <item code="0" name="USER-LOGON"/>
                 <item code="1" name="LOCATION-INFORMATION-CHANGED"/>
@@ -289,19 +289,19 @@
             </data>
         </avp>
 
-        <avp name="Line-Identifier" code="500" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="Line-Identifier" code="500" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Civic-Location" code="355" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="Civic-Location" code="355" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Geospatial-Location" code="356" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="Geospatial-Location" code="356" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Global-Access-Id" code="357" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="Global-Access-Id" code="357" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="Grouped">
                 <rule avp="Fixed-Access-ID" required="false" max="1" />
                 <rule avp="3GPP-User-Location-Info" required="false" max="1" />
@@ -309,7 +309,7 @@
             </data>
         </avp>
 
-        <avp name="Fixed-Access-Id" code="358" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="Fixed-Access-Id" code="358" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="Grouped">
                 <rule avp="Relay-Agent" required="true" max="1" />
                 <rule avp="Logical-Access-ID" required="false" max="1" />
@@ -318,23 +318,23 @@
             </data>
         </avp>
 
-        <avp name="Relay-Agent" code="359" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Relay-Agent" code="359" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Operator-Specific-GI" code="360" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="Operator-Specific-GI" code="360" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Emergency-Call-Routing-Info" code="361" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Emergency-Call-Routing-Info" code="361" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="UTF8String"/>
         </avp>
 
-        <avp name="Port-Number" code="362" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Port-Number" code="362" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="Unsigned32"/>
         </avp>
 
-        <avp name="PIDF-Location-Object" code="363" vendor-id="10415" must="V" must-not="M" may-encrypt="Y">
+        <avp name="PIDF-Location-Object" code="363" vendor-id="13019" must="V" must-not="M" may-encrypt="Y">
             <data type="UTF8String"/>
         </avp>
 
@@ -342,7 +342,7 @@
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Globally-Unique-Address" code="300" vendor-id="10415" must="M,V" may-encrypt="Y">
+        <avp name="Globally-Unique-Address" code="300" vendor-id="13019" must="M,V" may-encrypt="Y">
             <data type="Grouped">
                 <rule avp="Frame-IP-Address" required="false" max="1" />
                 <rule avp="Frame-IPv6-Prefix" required="false" max="1" />
@@ -350,18 +350,18 @@
             </data>
         </avp>
 
-        <avp name="Logical-Access-Id" code="302" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Logical-Access-Id" code="302" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Access-Network-Type" code="306" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Access-Network-Type" code="306" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="Grouped">
                 <rule avp="NAS-Port-Type" required="true" max="1" />
                 <rule avp="Aggregation-Network-Type" required="false" max="1" />
             </data>
         </avp>
 
-        <avp name="Initial-Gate-Setting" code="303" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="Initial-Gate-Setting" code="303" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="Grouped">
                 <rule avp="NAS-Filter-Rule" required="false" max="1" />
                 <rule avp="Max-Requested-Bandwidth-UL" required="false" max="1" />
@@ -369,7 +369,7 @@
             </data>
         </avp>
 
-        <avp name="QoS-Profile" code="304" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="QoS-Profile" code="304" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="Grouped">
                 <rule avp="Application-Class-ID" required="false" max="1" />
                 <rule avp="Media-Type" required="false" max="1" />
@@ -380,7 +380,7 @@
             </data>
         </avp>
 
-        <avp name="IP-Connectivity-Status" code="305" vendor-id="10415" must="V" may="M" may-encrypt="Y">
+        <avp name="IP-Connectivity-Status" code="305" vendor-id="13019" must="V" may="M" may-encrypt="Y">
             <data type="Enumerated">
                 <item code="0" name="IP-CONNECTIVITY-ON"/>
                 <item code="1" name="IP-CONNECTIVITY-LOST"/>
