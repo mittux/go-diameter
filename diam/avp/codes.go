@@ -38,6 +38,7 @@ const (
 	AcctSessionTime                   = 46
 	AcctTunnelConnection              = 68
 	AcctTunnelPacketsLost             = 86
+	AddressRealm                      = 301
 	AggregationNetworkType            = 307
 	AuthApplicationID                 = 258
 	AuthGracePeriod                   = 276
@@ -106,8 +107,6 @@ const (
 	FlowDirection                     = 1080
 	FlowInformation                   = 1058
 	FlowLabel                         = 1057
-	FrameIPAddress                    = 8
-	FrameIPv6Prefix                   = 97
 	FramedAppletalkLink               = 37
 	FramedAppletalkNetwork            = 38
 	FramedAppletalkZone               = 39

@@ -2672,8 +2672,8 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
 
         <avp name="Globally-Unique-Address" code="300" vendor-id="13019" must="M,V" may-encrypt="Y">
             <data type="Grouped">
-                <rule avp="Frame-IP-Address" required="false" max="1" />
-                <rule avp="Frame-IPv6-Prefix" required="false" max="1" />
+                <rule avp="Framed-IP-Address" required="false" max="1" />
+                <rule avp="Framed-IPv6-Prefix" required="false" max="1" />
                 <rule avp="Address-Realm" required="false" max="1" />
             </data>
         </avp>
@@ -2739,11 +2739,15 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Frame-IP-Address" code="8" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
+        <avp name="Framed-IP-Address" code="8" may="M" must-not="V" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Frame-IPv6-Prefix" code="97" vendor-id="10415" may="M" must-not="V" may-encrypt="Y">
+        <avp name="Framed-IPv6-Prefix" code="97" may="M" must-not="V" may-encrypt="Y">
+            <data type="OctetString"/>
+        </avp>
+
+        <avp name="Address-Realm" code="301" vendor-id="13019" must="M,V" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
         
