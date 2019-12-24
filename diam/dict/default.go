@@ -2739,14 +2739,6 @@ var tgppe2XML = `<?xml version="1.0" encoding="UTF-8"?>
             <data type="OctetString"/>
         </avp>
 
-        <avp name="Framed-IP-Address" code="8" may="M" must-not="V" may-encrypt="Y">
-            <data type="OctetString"/>
-        </avp>
-
-        <avp name="Framed-IPv6-Prefix" code="97" may="M" must-not="V" may-encrypt="Y">
-            <data type="OctetString"/>
-        </avp>
-
         <avp name="Address-Realm" code="301" vendor-id="13019" must="M,V" may-encrypt="Y">
             <data type="OctetString"/>
         </avp>
